@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali</title>
+
+    <!-- My Own CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <!-- javascript -->
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.nav-list a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+      });
+
+      window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar-container');
+        navbar.classList.toggle('sticky', window.scrollY > navbar.offsetTop);
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const locationIcon = document.getElementById('location-icon');
+        const modal = document.getElementById('location-modal');
+        const closeButton = document.getElementsByClassName('close')[0];
+
+        locationIcon.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+          if (event.target == modal) {
+              modal.style.display = 'none';
+          }
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const locationIcon = document.getElementById('image-icon');
+        const modal = document.getElementById('image-modal');
+        const closeButton = document.getElementsByClassName('close')[0];
+
+        locationIcon.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+          if (event.target == modal) {
+              modal.style.display = 'none';
+          }
+        });
+      });
+
+  </script>
+       
+
+</head>
+<body>
+    <header class="navbar-container">
+        <h2 class="first">Bali</h2>
+        <nav class="nav-list">
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#alam">Keindahan Alam</a></li>
+                <li><a href="#kebudayaan">Kebudayaan</a></li>
+                <li><a href="#about">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+      <section id="beranda" >
+        <div class="content">
+            <div class="content-description" style="margin-top: 10rem;">
+              <h3>Keunikan yang Menawan</h3>
+                <h1 class="title">
+                    Pulau Dewata Bali
+                </h1>
+                <p>
+                    Pulau Bali dikenal dengan sebutan Pulau Dewata dimana Bali adalah
+                    salah satu tempat terindah yang Indonesia miliki. Perpaduan antara 
+                    arsitektur bernuansa tradisi, kebiasaan, alam yang indah dapat 
+                    menyatukan dan membentuk suasana yang unik.
+                  </p>
+                  <button>Lebih lanjut</button>
+            </div>
+            <div class="content-image">
+                <img src="images/bali-image.jpg" alt="bali foto" />
+            </div>
+        </div>
+      </section>
+
+      <article>
+        <section class="container" id="alam">
+          <div class="content">
+              <div class="content-image">
+                  <img src="images/pantai-kuta.jpg" alt="pantai bali" />
+              </div>
+              <div class="content-description">
+                  <h1 class="title">
+                      Keindahan Alam
+                  </h1>
+                  
+                  <p>
+                    Pulau Bali menawarkan pemandangan alam yang luar biasa. Dari pantai 
+                    pasir putih yang mempesona hingga perbukitan yang hijau dan gunung-gunung 
+                    yang megah, Bali memiliki segala yang bisa Anda bayangkan.
+                  </p>
+                  <p>
+                    Pantai Kuta adalah salah satu yang paling terkenal, dengan pasir 
+                    putih yang halus dan ombak yang ideal untuk berselancar. Pantai-pantai 
+                    lain seperti Pantai Nusa Dua, Pantai Sanur, dan Pantai Uluwatu juga 
+                    menawarkan keindahan alam yang memukau.
+                  </p>
+                  <p>
+                    Selain itu, Gunung Agung, gunung tertinggi di Bali, memberikan 
+                    pemandangan yang spektakuler. Anda dapat mendaki gunung ini untuk 
+                    menikmati matahari terbit yang memukau atau melihat panorama yang 
+                    menakjubkan dari puncaknya.
+                  </p>
+              </div>
+          </div>
+        </section>
+
+        <section class="container" id="kebudayaan">
+          <div class="content">
+              <div class="content-image">
+                  <img src="images/tari-kecak.jpg" alt="tari kecak" />
+              </div>
+              <div class="content-description">
+                <h3>Kebudayaan Bali</h3>
+                  <h1 class="title">
+                      Tari Kecak
+                  </h1>
+                  <p>
+                    Tari Kecak merupakan warisan budaya Bali yang menakjubkan. 
+                    Diwarnai oleh gerakan yang dinamis dan nyanyian vokal yang kuat, 
+                    pertunjukan ini menggambarkan kisah epik Ramayana. Kehadirannya 
+                    mencerminkan kekayaan tradisi Bali yang mempesona, memikat 
+                    wisatawan dari seluruh dunia dan memperkaya warisan budaya Indonesia.
+                  </p>
+              </div>
+          </div>
+        </section>
+
+        <section class="kebudayaan" id="about">
+          <div class="content" style="margin-top: 10rem;">
+              <div class="content-description">
+                <h3>Tentang Bali</h3>
+                  <h1 class="title">
+                      Pulau Dewata Bali
+                  </h1>
+                  <p>
+                    Bali, pulau eksotis di Indonesia, memikat pengunjung dengan keindahan alamnya 
+                    yang memukau dan warisan budayanya yang kaya. Dikenal sebagai "Pulau Dewata", 
+                    Bali menawarkan pantai-pantai pasir putih yang memikat, gunung-gunung yang menjulang, 
+                    serta sawah-sawah hijau yang menyejukkan mata. Selain itu, keberagaman budaya dan tradisi 
+                    Bali menambah pesona pulau ini. Dari upacara keagamaan hingga tarian tradisional, 
+                    setiap sudut Bali dipenuhi dengan kehidupan dan keindahan yang mempesona. Wisatawan 
+                    dapat menikmati kegiatan menyelam di perairan kaya terumbu karang, menjelajahi pura-pura 
+                    kuno yang megah, atau bersantai di spa-spa mewah. Kuliner Bali juga tidak kalah menarik 
+                    dengan hidangan lokal yang lezat seperti babi guling dan ayam betutu. Bali bukan sekadar 
+                    destinasi liburan, tapi juga pengalaman yang tak terlupakan bagi siapa pun yang mengunjunginya.
+                  </p>
+              </div>
+          </div>
+        </section>
+      </article>
+
+        <aside>
+            <div class="social-media">
+              <ul>
+                <li>
+                  <a href="#map-modal" id="image-icon"><i class="fas fa-file-image"></i></a>
+                </li>
+                <li>
+                  <a href="#map-modal" id="location-icon"><i class="fas fa-map-marked-alt"></i></a>
+                </li>
+              </ul>
+            </div>
+        </aside>
+        
+        <!-- Modal -->
+        <div id="location-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+              <h1 class="title">
+                Lokasi Bali
+            </h1>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4975065.744940743!2d112.9307889713146!3d-5.833250673945448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd141d3e8100fa1%3A0x24910fb14b24e690!2sBali!5e0!3m2!1sid!2sid!4v1707318336552!5m2!1sid!2sid" 
+              width="100%" height="80%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div id="image-modal" class="modal">
+          <div class="modal-content-image">
+            <span class="close">&times;</span>
+              <h1 class="title">
+                Image
+            </h1>
+            <div class="image">
+              <img src="images/bali-culture.jpg" alt="bali culture" />
+            </div>
+          </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>
+          <span class="copyright-text">Copyright © 2024 <a style="color: #6c757d; font-weight: bold;" href="#beranda">Bali</a> Company. All rights reserved.</span>
+      </p>
+    </footer>
+</body>
+</html>
